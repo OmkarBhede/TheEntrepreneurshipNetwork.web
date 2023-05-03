@@ -39,7 +39,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "yarn build && netlify deploy --prod --dir=build"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app",
@@ -65,5 +66,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "engines": {
+    "node": "15.x"
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   }
 }
